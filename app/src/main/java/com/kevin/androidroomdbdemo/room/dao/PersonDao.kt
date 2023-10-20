@@ -12,16 +12,21 @@ import com.kevin.androidroomdbdemo.room.entity.Person
 interface PersonDao {
 
 
+    // Query to get all persons
     @Query("SELECT * FROM person")
     suspend fun getAll(): List<Person>
+
+    // Insert person to database
     @Insert
-    suspend fun insert(person: Person)
+    suspend fun insert(person: Person): Long
 
+    // Delete person from database
     @Delete
-    suspend fun delete(person: Person)
+    suspend fun delete(person: Person): Int
 
+    // Update person in database
     @Update
-    suspend fun update(person: Person)
+    suspend fun update(person: Person): Int
 
 
 }
