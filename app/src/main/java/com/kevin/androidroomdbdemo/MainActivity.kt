@@ -41,8 +41,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Database instance using lazy initialization
+    // destructive migration is enabled
     private val db: PersonDataBase by lazy {
-        Room.databaseBuilder(this.applicationContext, PersonDataBase::class.java, "person_db")
+        Room.databaseBuilder(this.applicationContext,
+            PersonDataBase::class.java,
+            "person_db")
+            .fallbackToDestructiveMigration()
             .build()
     }
 
