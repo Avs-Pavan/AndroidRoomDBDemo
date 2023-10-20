@@ -13,5 +13,6 @@ data class Person(
     @ColumnInfo var age: Int?,
     @ColumnInfo var name: String?,
     @ColumnInfo var profession: String?,
-    @ColumnInfo(name = "address", defaultValue = "Default address") var address: String?
+    @ColumnInfo(name = "address", defaultValue = "Default address") var address: String?,
+    @ColumnInfo(name = "salary") var salary: Double = 0.0
 )
